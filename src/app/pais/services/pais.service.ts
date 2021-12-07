@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PaisService {
-  private apiUrl: string = 'https://restcountries.com/v3.1';
+  private baseApiUrl: string = 'https://restcountries.com/v3.1';
 
   constructor(private http: HttpClient) { }
 
   buscarPais(termino: string): Observable<any> {
-    const url = `${this.apiUrl}/name/${termino}`;
+    const url = `${this.baseApiUrl}/name/${termino}`;
 
     return this.http.get(url);
   }
